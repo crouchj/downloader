@@ -1,0 +1,12 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+
+[*.{scss,js,json,yml}]
+indent_size = 2
+
+[*.{php,blade.php}]
+indent_size = 4
