@@ -1,9 +1,9 @@
-@extends('admin')
+@extends('layouts.dashboard')
 
 @section('content')
 <main class="dashboard-downloads">
 
-	<nav><a href="{{ URL::route('download.create') }}" class="add-new"><span class="icon-downloads icon" aria-hidden="true" data-icon="&#8862;"></span>Add New</a></nav>
+	<nav><a href="{{ route('download.create') }}" class="add-new"><span class="icon-downloads icon" aria-hidden="true" data-icon="&#8862;"></span>Add New</a></nav>
 
 	<section class="downloads module">
 		<h2>Downloads</h2>
@@ -17,4 +17,4 @@
 	</section>
 
 </main>
-@stop
+@endsection

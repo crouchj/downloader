@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -23,7 +23,7 @@
 
 		<div class="module-content group">
 		@if ($releases->isEmpty())
-			<h2 class="no-results">No Releases. <a href="{{ URL::route('release.create') }}">Add one!</a></h2>
+			<h2 class="no-results">No Releases. <a href="{{ route('release.create') }}">Add one!</a></h2>
 		@else
 			<article class="releases accordion">
 
@@ -32,14 +32,14 @@
 					<header data-header-id="{{ $index }}" data-release-id="{{ $release->id }}">
 						<span class="artist">{{ $release->artist->name }}</span>
 						<span class="title">{{ $release->title }}</span>
-						{{ Form::open(array('route' => 'release.destroy', 'method' => 'delete', 'class' => 'release-delete delete crud', 'data-ajax' => URL::route('release.destroy'))) }}
+						{{ Form::open(array('route' => 'release.destroy', 'method' => 'delete', 'class' => 'release-delete delete crud', 'data-ajax' => link_to_route('release.destroy'))) }}
 							{{ Form::hidden('id', $release->id) }}
 			                {{ Form::button('<span class="icon icon-trash" aria-hidden="true"></span><span class="txt">Delete</span>', array('class' => 'delete-button button')) }}
 						{{ Form::close() }}
 					</header>
 					<section class="accordion-content" data-release-id="{{ $release->id }}">
 						<div class="crud-container col" data-id="{{ $index }}">
-				        {{ Form::open(array('route' => 'release.update', 'method' => 'put', 'id' => 'release-update', 'class' => 'release-update update crud', 'data-ajax' => URL::route('release.update'))) }}
+				        {{ Form::open(array('route' => 'release.update', 'method' => 'put', 'id' => 'release-update', 'class' => 'release-update update crud', 'data-ajax' => link_to_route('release.update'))) }}
 						<div class="fields">
 							{{ Form::hidden('id', $release->id) }}
 				            @if(Session::has('message'))
@@ -91,4 +91,4 @@
 <div id="tmpl-create-new">
 	@include('dashboard.release.form.create')
 </div>
-@stop
+@endsection

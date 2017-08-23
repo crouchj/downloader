@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -7,4 +7,4 @@
 	@include('dashboard.release.form.create')
 
 </main>
-@stop
+@endsection

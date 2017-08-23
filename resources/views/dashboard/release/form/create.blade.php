@@ -9,7 +9,7 @@ foreach (Artist::orderBy('name')->get()->toArray() as $artist) {
 	<div class="module-header">
         <h2>
     		New <span class="type">Release</span>
-    		<a class="list" href="{{ URL::route('release.index') }}">
+    		<a class="list" href="{{ route('release.index') }}">
     			<span class="icon icon-list-circle" aria-hidden="true"></span>
     			<span class="text">List Releases</span>
     		</a>

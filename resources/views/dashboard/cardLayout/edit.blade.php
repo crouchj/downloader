@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="module-content crud-container group">
-	        {{ Form::open(array('route' => 'cardLayout.update', 'method' => 'put', 'id' => 'layout-update', 'class' => 'layout-update update crud', 'data-ajax' => URL::route('ajax.cardLayouts.update'))) }}
+	        {{ Form::open(array('route' => 'cardLayout.update', 'method' => 'put', 'id' => 'layout-update', 'class' => 'layout-update update crud', 'data-ajax' => link_to_route('ajax.cardLayouts.update'))) }}
 			<div class="fields">
 				{{ Form::hidden('id', $layout->id) }}
 	            @if(Session::has('message'))
@@ -59,4 +59,4 @@
 
 </main>
 
-@stop
+@endsection

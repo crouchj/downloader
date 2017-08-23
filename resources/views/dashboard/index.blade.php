@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.dashboard')
 
 @section('content')
 <main class="dashboard-home">
@@ -25,4 +25,4 @@
 		</div>
 	</section>
 </main>
-@stop
+@endsection

@@ -1,4 +1,4 @@
-@extends('admin') @section('content')
+@extends('layouts.dashboard') @section('content')
 
 <main class="dashboard-artists">
 
@@ -21,17 +21,17 @@
 
     <div class="module-content group">
       @if ($artists->isEmpty())
-      <h2 class="no-results">No Artists. <a href="{{ URL::route('artist.create') }}">Add one!</a></h2> @else
+      <h2 class="no-results">No Artists. <a href="{{ route('artist.create') }}">Add one!</a></h2> @else
       <article class="artists accordion ">
         @foreach ($artists as $index => $artist)
 
         <header data-header-id="{{ $index }}" data-artist-id="{{ $artist->id }}">
-          <span class="artist">{{ $artist->name }}</span> {{ Form::open(array('route' => 'artist.destroy', 'method' => 'delete', 'class' => 'artist-delete delete crud', 'data-ajax' => URL::route('ajax.artists.destroy'))) }} {{ Form::hidden('id', $artist->id)
+          <span class="artist">{{ $artist->name }}</span> {{ Form::open(array('route' => 'artist.destroy', 'method' => 'delete', 'class' => 'artist-delete delete crud', 'data-ajax' => link_to_route('ajax.artists.destroy'))) }} {{ Form::hidden('id', $artist->id)
           }} {{ Form::button('<span class="icon icon-trash" aria-hidden="true"></span><span class="txt">Delete</span>', array('class' => 'delete-button button')) }} {{ Form::close() }}
         </header>
         <section class="accordion-content" data-artist-id="{{ $artist->id }}">
           <div class="crud-container col" data-id="{{ $index }}">
-            {{ Form::open(array('route' => 'artist.update', 'method' => 'put', 'id' => 'artist-update', 'class' => 'artist-update update crud', 'data-ajax' => URL::route('ajax.artists.update'))) }} {{ Form::hidden('id', $artist->id) }}
+            {{ Form::open(array('route' => 'artist.update', 'method' => 'put', 'id' => 'artist-update', 'class' => 'artist-update update crud', 'data-ajax' => link_to_route('ajax.artists.update'))) }} {{ Form::hidden('id', $artist->id) }}
             <div class="fields">
               @if(Session::has('message'))
               <div class="messages">
@@ -82,4 +82,4 @@
 <div id="tmpl-create-new">
   @include('dashboard.artist.form.create')
 </div>
-@stop
+@endsection
