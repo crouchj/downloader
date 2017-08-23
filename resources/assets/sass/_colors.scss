@@ -1,0 +1,35 @@
+$primary: #3CB2D0;
+$secondary: #2A94AF;
+$tertiary: #7CC9DC;
+$quadrary: #CCF5FF;
+
+$header_bg: #0e313a;
+$header_border: #556E74;
+$header_red: 		#FF1E00;
+$header_aqua: 	#00ff9e;
+$header_purple:	#ff00e1;
+$header_blue:		#0062ff;
+
+$menu_sub_bg: desaturate(lighten($header_bg, 70%), 40%);
+//$menu_sub_bg_light: #4b6a7a;
+//$menu_sub_bg_dark: darken(#4b6a7a, 5%);
+$menu_sub_bg_light: #fff;
+$menu_sub_bg_dark: darken($menu_sub_bg_light, 10%);
+
+$body_bg: #eef6f6;
+
+$med_grey: #5F6B67;
+$dark_grey: darken($med_grey, 15%);
+$light_grey: lighten($med_grey, 30%);
+$lighter_grey: lighten($med_grey, 50%);
+$white: lighten($med_grey, 60%);
+//$red: #d05a3c;
+//$green: #3cd05a;
+$red: #f04124;
+$green: #43ac6a;
+$yellow: #e99002;
+$black: #020202;
+
+
+$button_color: $primary;
+$button_active: adjust-color($secondary, $hue: -50deg, $saturation: 50, $lightness: 5);

@@ -1,0 +1,160 @@
+// icons
+@font-face {
+  font-family: 'Downloader';
+  src: url('/public/fonts/downloader.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/downloader.woff') format('woff'),
+       url('/public/fonts/downloader.ttf') format('truetype'),
+       url('/public/fonts/downloader.svg') format('svg');
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[data-icon]:before {
+    font-family: "Downloader";
+    font-size: 3em;
+//    content: attr(data-icon);
+//    line-height: 1;
+    speak: none;
+    text-transform: none;
+}
+
+.icon-download:before {
+    content: "a";
+}
+.icon-home:before {
+    content: "b";
+}
+.icon-music:before {
+    content: "c";
+}
+.icon-cards:before {
+    content: "d";
+}
+.icon-add-circle:before {
+    content: "e";
+}
+.icon-x-circle:before {
+    content: "f";
+}
+.icon-x-circle-thin:before {
+    content: "r";
+}
+.icon-x:before {
+    content: "g";
+}
+.icon-power:before {
+    content: "h";
+}
+.icon-trash-2:before {
+    content: "i";
+}
+.icon-trash-3:before {
+    content: "j";
+}
+.icon-trash:before {
+    content: "k";
+}
+.icon-image:before {
+    content: "l";
+}
+.icon-images:before {
+    content: "m";
+}
+.icon-config:before {
+    content: "n";
+}
+.icon-config-2:before {
+    content: "o";
+}
+.icon-info:before {
+    content: "p";
+}
+.icon-logout:before {
+    content: "q";
+}
+.icon-check-circle:before {
+    content: "s";
+}
+.icon-check:before {
+    content: "t";
+}
+.icon-question-circle:before {
+    content: "u";
+}
+.icon-person:before {
+    content: "v";
+}
+.icon-people:before {
+    content: "w";
+}
+.icon-loading-1:before {
+    content: "x";
+}
+.icon-loading-2:before {
+    content: "y";
+}
+.icon-loading:before {
+    content: "z";
+}
+.icon-loading-3:before {
+    content: "A";
+}
+.icon-list-circle:before {
+    content: "P";
+}
+.icon-list-unordered:before {
+    content: "B";
+}
+.icon-list-numbered:before {
+    content: "C";
+}
+.icon-chart-line:before {
+    content: "D";
+}
+.icon-chart-bar:before {
+    content: "E";
+}
+.icon-dl-card:before {
+    content: "F";
+}
+.icon-templates:before {
+    content: "G";
+}
+.icon-tools:before {
+    content: "H";
+}
+.icon-alert:before {
+    content: "I";
+}
+.icon-arrow-circle-left:before {
+    content: "J";
+}
+.icon-arrow-circle-right:before {
+    content: "K";
+}
+.icon-arrow-circle-down:before {
+    content: "O";
+}
+.icon-arrow-down-triangle:before {
+    content: "L";
+}
+.icon-arrow-down-thin:before {
+    content: "M";
+}
+.icon-arrow-down-thick:before {
+    content: "N";
+}
+.icon-archive:before {
+    content: "R";
+}
+
+@font-face {
+  font-family: 'Music';
+  src: url('/public/fonts/Music.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/Music.woff'),
+       url('/public/fonts/Music.ttf'),
+       url('/public/fonts/Music.svg');
+}
+
+$icon_artists: "q";
+$icon_releases: "*";

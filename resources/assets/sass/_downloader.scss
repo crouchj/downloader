@@ -1,0 +1,160 @@
+.bd-downloader {
+	background: $primary;
+	color: $white;
+	position: absolute;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	// glowing input boxes
+	input[type=email],
+	input[type=password],
+	input[type=text],
+	textarea {
+		@include transition(all 0.30s ease-in-out);
+		outline: none;
+		padding: 3px 0 3px 3px;
+		margin: 5px 1px 3px 0;
+		border: 2px solid $light_grey;
+	}
+
+	input[type=email]:focus,
+	input[type=password]:focus,
+	input[type=text]:focus,
+	textarea:focus {
+		@include box-shadow(0 0 5px rgba(81, 203, 238, 1));
+		padding: 3px 0 3px 3px;
+		margin: 5px 1px 3px 0;
+		border: 2px solid rgba(81, 203, 238, 1);
+	}
+}
+
+.wr {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.downloader {
+	max-width: 960px;
+	margin: 20px auto;
+	min-height: 300px;
+	position: relative;
+
+	.messages {
+		color: $red;
+		position: absolute;
+		bottom: 110px;
+		left: 40px;
+		right: 136px;
+		text-align: center;
+
+		span {
+			background: rgba($red, 0.3);
+			border-radius: 3px;
+			padding: 10px;
+
+			&:after {
+				display: inline-block;
+				position: absolute;
+				top: 29px;
+				margin-left: -94px;
+				text-align: center;
+				content: ' ';
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 20px solid rgba($red, 0.3);
+			}
+		}
+	}
+
+	h1 {
+		font-size: 60px;
+		line-height: 45px;
+		margin: 0 0 10px;
+	}
+
+	h3 {
+		font-size: 35px;
+		line-height: 28px;
+		margin: 0 0 38px;
+	}
+
+	.download-info,
+	.instructions {
+		display: inline-block;
+		padding: 5px;
+		position: relative;
+	}
+
+	.txt-container {
+		margin: 0;
+	}
+
+	.download-info {
+		width: 60%;
+	}
+
+	.instructions {
+		color: $light_grey;
+		float: right;
+		width: 24%;
+	}
+
+	p {
+		font-size: 22px;
+		line-height: 20px;
+		text-align: justify;
+
+		&:first-child {
+			margin: 0 0 20px;
+		}
+	}
+
+	.contact {
+		margin: 0 0 40px;
+		position: relative;
+		text-align: right;
+
+		.email {
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	.form-container {
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.code {
+		input {
+			font-size: 24px;
+			line-height: 1.5em;
+		}
+	}
+
+	.download-btn {
+		margin: 20px 0 0;
+		text-align: center;
+
+		button {
+			@include transition(color 0.2s ease-in-out);
+			background: none;
+			color: $primary;
+			height: 100px;
+			width: 100px;
+
+			&:hover {
+				background: none;
+				color: darken($primary, 15%);
+			}
+		}
+
+		.icon {
+			font-size: 30px;
+			line-height: 100px;
+		}
+	}
+}
