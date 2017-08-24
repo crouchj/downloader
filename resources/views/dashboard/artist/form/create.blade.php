@@ -1,10 +1,3 @@
-<?php
-// $artists_list = array();
-// foreach (Artist::orderBy('name')->get()->toArray() as $artist) {
-// 	$artists_list[$artist['id']] = $artist['name'];
-// }
-?>
-
 <section class="module-create module">
     <div class="module-header">
     	<h2>
@@ -17,7 +10,7 @@
     </div>
     <div class="module-content group">
         <div class="crud-container">
-                {{ Form::open(array('route' => 'artist.store', 'id' => 'artist-store', 'class' => 'artist-create create crud', 'data-ajax' => link_to_route('ajax.artists.store'))) }}
+                {{ Form::open(['route' => 'artist.store', 'id' => 'artist-store', 'class' => 'artist-create create crud']) }}
                     @include('dashboard.artist.form.artist_form')
                 {{ Form::close() }}
         </div>

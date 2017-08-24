@@ -1,10 +1,3 @@
-<?php
-$artists_list = array();
-foreach (Artist::orderBy('name')->get()->toArray() as $artist) {
-	$artists_list[$artist['id']] = $artist['name'];
-}
-?>
-
 <section class="module-create module">
 	<div class="module-header">
         <h2>

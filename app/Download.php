@@ -1,22 +1,10 @@
 <?php
 
-class Download extends Eloquent
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Download extends Model
 {
-    protected $table    = 'downloads';
-    protected $fillable = array('code', 'filename');
-
-    public function artist()
-    {
-        return $this->belongsTo('Artist');
-    }
-
-    public function release()
-    {
-        return $this->belongsTo('Release');
-    }
-
-    public function downloadGroup()
-    {
-        return $this->belongsTo('DownloadGroup');
-    }
+    //
 }

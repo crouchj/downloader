@@ -44,7 +44,7 @@
     </nav>
     <nav class="user-nav">
         <ul>
-            <li data-title="Profile"><a href="/"><span class="icon-person icon" aria-hidden="true"></span></a></li>
+            <li data-title="Profile"><a href="{{ route('user.show', ['id' => Auth::user()->id]) }}"><span class="icon-person icon" aria-hidden="true"></span></a></li>
             <li data-title="Logout">
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="icon icon-power" aria-hidden="true"></span></a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>

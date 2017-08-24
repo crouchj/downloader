@@ -1,17 +1,13 @@
 <?php
 
-class Artist extends Eloquent
-{
-    protected $table    = 'artists';
-    protected $fillable    = array('name');
+namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+
+class Artist extends Model
+{
     public function releases()
     {
-        return $this->hasMany('Release');
-    }
-
-    public function release()
-    {
-        return $this->belongsTo('Release');
+        return $this->hasMany('App\Release');
     }
 }

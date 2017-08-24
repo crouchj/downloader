@@ -17,7 +17,7 @@ class DownloadProcessController extends Controller
     public function index()
     {
         $message = session('message');
-        return View::make('download')->withMessage($message);
+        return view('download')->withMessage($message);
     }
 
     public function postDownloadForm()

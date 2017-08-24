@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('card', 'CardController');
     Route::resource('cardLayout', 'CardLayoutController');
     Route::resource('config', 'ConfigController');
+    Route::resource('user', 'UserController');
 });
 
 Auth::routes();

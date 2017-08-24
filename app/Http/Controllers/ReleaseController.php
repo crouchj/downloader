@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\View;
+use App\Release;
+use App\Artist;
+use Illuminate\Http\Request;
 
 class ReleaseController extends Controller
 {
@@ -28,8 +30,11 @@ class ReleaseController extends Controller
         return $code;
     }
 
-    private function generatePassword($length)
+    private function getAllArtistsForSelectList()
     {
+        return Artist::orderBy('name')->get()->mapWithKeys(function ($artist) {
+            return [$artist['id'] => $artist['name']];
+        })->toArray();
     }
 
     /**
@@ -39,7 +44,7 @@ class ReleaseController extends Controller
      */
     public function index()
     {
-        return View::make('dashboard.release.index', array('releases' => Release::with(array('artist'))->get()));
+        return view('dashboard.release.index', ['releases' => Release::with(['artist'])->get(), 'allArtists' => $this->getAllArtistsForSelectList()]);
     }
 
 
@@ -50,8 +55,7 @@ class ReleaseController extends Controller
      */
     public function create()
     {
-        $message = session('message');
-        return View::make('dashboard.release.create', compact($message));
+        return view('dashboard.release.create', ['allArtists' => $this->getAllArtistsForSelectList()]);
     }
 
 
@@ -60,30 +64,26 @@ class ReleaseController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
         $adding_new_artist = false;
-        $a      = Input::get('artist');
-        $new_a  = Input::get('new-val');
+        $a      = $request->input('artist');
+        $new_a  = $request->input('new-val');
         if ((!isset($a) || $a == 'null') && isset($new_a)) {
             Input::merge(array('artist' => 'new-val'));
             $adding_new_artist = true;
         }
 
-        $rules = array(
-            'artist'           => 'required',
-            'title'          => 'required',
-            'release-date'    => 'required'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-        if ($validator->fails()) {
-            return View::make('dashboard.release.create')->withErrors($validator);
-        }
+        $this->validate($request, [
+            'artist'        => 'required',
+            'title'         => 'required',
+            'release-date'  => 'required'
+        ]);
 
         $release                    = new Release;
-        $release->title             = Input::get('title');
-        $release->release_number    = Input::get('release-number');
-        $release->release_date      = date("Y-m-d H:i:s", strtotime(Input::get('release-date')));
+        $release->title             = $request->input('title');
+        $release->release_number    = $request->input('release-number');
+        $release->release_date      = date("Y-m-d H:i:s", strtotime($request->input('release-date')));
 
         // Zip file
         if (Input::hasFile('zipfile')) {
@@ -94,37 +94,37 @@ class ReleaseController extends Controller
 
 
         if ($adding_new_artist) {
-            $new_artist_name        = Input::get('new-val');
+            $new_artist_name        = $request->input('new-val');
             $new_artist             = new Artist;
             $new_artist->name       = $new_artist_name;
             $new_artist->save();
 
             $artist = Artist::where('name', $new_artist_name)->firstOrFail();
         } else {
-            $artist = Artist::find(Input::get('artist'));
+            $artist = Artist::find($request->input('artist'));
         }
 
         $release->artist()->associate($artist);
 
         // Generate DL codes?
-        if (Input::get('generate-dl-codes') == 'yeah') {
+        if ($request->input('generate-dl-codes') == 'yeah') {
             // DownloadGroup
-            $dl_group = new DownloadGroup(Input::get('download-group-title'));
+            $dl_group = new DownloadGroup($request->input('download-group-title'));
 
             // Download
-            $num_codes        = Input::get('num-codes');
-            $num_chars        = Input::get('num-chars');
+            $num_codes        = $request->input('num-codes');
+            $num_chars        = $request->input('num-chars');
             $count          = empty($count)     ? 1000  : $count;
             $length         = empty($length)    ? 8     : $length;
             $codes_in_db    = Download::all()->toArray();
             $i                = 0;
 
             while ($count > 0) {
-                $p = self::generatePassword($length);
+                $p = $this->generateCode($length);
                 if (!in_array($p, $new_codes) && !in_array($p, $codes_in_db)) {
                     $dl = new Download(array(
                         'code'      => $p,
-                        'filename'  => Input::get('filename'),
+                        'filename'  => $request->input('filename'),
                     ));
                     $dl->artist()->associate($artist);
                     $dl->release()->associate($release);
@@ -141,7 +141,7 @@ class ReleaseController extends Controller
             return 1;
         }
         // redirect
-        return View::make('dashboard.release.index', array('releases' => Release::all()))->withMessage('Successfully created: <span class="title">' . $release->title . '</span>');
+        return view('dashboard.release.index', array('releases' => Release::all()))->withMessage('Successfully created: <span class="title">' . $release->title . '</span>');
     }
 
 
@@ -151,7 +151,7 @@ class ReleaseController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         //
     }
@@ -175,15 +175,15 @@ class ReleaseController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         if (Request::ajax()) {
-            $release                    = Release::find(Input::get('id'));
-            $release->title             = Input::get('title');
-            $release->release_number    = Input::get('release-number');
-            $release->release_date      = date("Y-m-d H:i:s", strtotime(Input::get('release-date')));
+            $release                    = Release::find($request->input('id'));
+            $release->title             = $request->input('title');
+            $release->release_number    = $request->input('release-number');
+            $release->release_date      = date("Y-m-d H:i:s", strtotime($request->input('release-date')));
 
-            $artist = Artist::find(Input::get('artist'));
+            $artist = Artist::find($request->input('artist'));
             if ($artist) {
                 $release->artist()->associate($artist);
             }
@@ -201,10 +201,10 @@ class ReleaseController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         if (Request::ajax()) {
-            Release::destroy(Input::get('id'));
+            Release::destroy($request->input('id'));
             return 1;
         }
     }
