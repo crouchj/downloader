@@ -6,7 +6,7 @@
 			<div id="login-form" class="login-form module">
 	            @if(Session::has('message'))
 	                <div class="messages">
-                        <span class="icon icon-alert"></span>
+                        <i class="icon icon-alert"></i>
 	                    {{ session('message') }}
 	                </div>
 	            @endif

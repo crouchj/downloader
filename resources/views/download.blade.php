@@ -25,7 +25,7 @@
                         {{ Form::text('downloadId', '', array('class' => 'download-code', 'placeholder' => 'Download Code')) }}
                     </div>
                     <div class="download-btn submit-btn form-group">
-                        {{ Form::button('<span class="icon icon-download" aria-hidden="true"></span>', array('class' => 'button')) }}
+                        {{ Form::button('<i class="icon icon-download" aria-hidden="true"></i>', array('class' => 'button')) }}
                     </div>
                 {{ Form::close() }}
             </div>

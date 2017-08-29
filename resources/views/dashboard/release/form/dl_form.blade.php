@@ -6,11 +6,11 @@
     		<div class="image-preview">
     		    <div class="overlay"></div>
     		</div>
-            <span class="icon icon-image" aria-hidden="true"></span>
+            <i class="icon icon-image" aria-hidden="true"></i>
         </div>
         <div class="form-group zipfile">
             {{ Form::file('zipfile') }}
-            <span class="icon-archive"></span>
+            <i class="icon-archive"></i>
             <span class="filename"></span>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="download-code-fields">
             <div class="toggle-container">
         		{{ Form::checkbox('generate-dl-codes', 'yeah', true, ['id' => 'g-dl-codes-toggle']) }}
-                <div class="checkbox"><span class="icon icon-check"></span></div>
+                <div class="checkbox"><i class="icon icon-check"></i></div>
                 {{ Form::label('g-dl-codes-toggle', 'Generate Download Codes') }}
             </div>
             {{ Form::text('download-group-title', '', ['class' => 'download-group-title', 'placeholder' => 'Title of code set']) }}
@@ -40,6 +40,6 @@
     </div>
 </div>
 <div class="save-cancel form-group">
-    {{ Form::button('<span class="icon icon-check" aria-hidden="true"></span>', ['class' => 'save-button submit-button button', 'type' => 'submit']) }}
-	{{ Form::button('<span class="icon icon-x" aria-hidden="true"></span>', ['class' => 'cancel-button button']) }}
+    {{ Form::button('<i class="icon icon-check" aria-hidden="true"></i>', ['class' => 'save-button submit-button button', 'type' => 'submit']) }}
+	{{ Form::button('<i class="icon icon-x" aria-hidden="true"></i>', ['class' => 'cancel-button button']) }}
 </div>

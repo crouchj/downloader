@@ -7,7 +7,7 @@
             <h2>
                 <span>Artists</span>
                 <a class="add-new modal">
-                    <span class="icon-add-circle icon" aria-hidden="true"></span>
+                    <i class="icon-plus-circle icon" aria-hidden="true"></i>
                     <span class="text">Add New</span>
                 </a>
             </h2>
@@ -23,7 +23,7 @@
                         <span class="artist">{{ $artist->name }}</span>
                         {{ Form::open(['route' => ['artist.destroy', $artist->id], 'method' => 'delete', 'class' => 'artist-delete delete crud']) }}
                             {{ Form::hidden('id', $artist->id) }}
-                            {{ Form::button('<span class="icon icon-trash" aria-hidden="true"></span><span class="txt">Delete</span>', ['class' => 'delete-button button']) }}
+                            {{ Form::button('<i class="icon icon-trash" aria-hidden="true"></i><span class="txt">Delete</span>', ['class' => 'delete-button button']) }}
                         {{ Form::close() }}
                     </header>
                     <section class="accordion-content" data-artist-id="{{ $artist->id }}">
@@ -41,8 +41,8 @@
                                     </div>
                                 </div>
                                 <div class="save-cancel form-group">
-                                    {{ Form::button('<span class="icon icon-check" aria-hidden="true"></span>', ['class' => 'save-button submit-button button']) }}
-                                    {{ Form::button('<span class="icon icon-x" aria-hidden="true"></span>', ['class' => 'cancel-button button']) }}
+                                    {{ Form::button('<i class="icon icon-check" aria-hidden="true"></i>', ['class' => 'save-button submit-button button']) }}
+                                    {{ Form::button('<i class="icon icon-x" aria-hidden="true"></i>', ['class' => 'cancel-button button']) }}
                                 </div>
                             {{ Form::close() }}
                         </div>

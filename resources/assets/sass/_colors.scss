@@ -14,7 +14,8 @@ $menu_sub_bg: desaturate(lighten($header_bg, 70%), 40%);
 //$menu_sub_bg_light: #4b6a7a;
 //$menu_sub_bg_dark: darken(#4b6a7a, 5%);
 $menu_sub_bg_light: #fff;
-$menu_sub_bg_dark: darken($menu_sub_bg_light, 10%);
+$menu_sub_bg_dark: #fafafa;
+$menu_sub_bg_darker: #f5f5f5;
 
 $body_bg: #eef6f6;
 
@@ -23,8 +24,6 @@ $dark_grey: darken($med_grey, 15%);
 $light_grey: lighten($med_grey, 30%);
 $lighter_grey: lighten($med_grey, 50%);
 $white: lighten($med_grey, 60%);
-//$red: #d05a3c;
-//$green: #3cd05a;
 $red: #f04124;
 $green: #43ac6a;
 $yellow: #e99002;
@@ -32,4 +31,4 @@ $black: #020202;
 
 
 $button_color: $primary;
-$button_active: adjust-color($secondary, $hue: -50deg, $saturation: 50, $lightness: 5);
+$button_active: #00ff9e;

@@ -6,7 +6,7 @@
         <div id="login-form" class="login-form module">
             @if ($errors->has('password'))
                 <div class="messages">
-                    <span class="icon icon-alert"></span>
+                    <i class="icon icon-alert"></i>
                     <span>{{ $errors->first('password') }}</span>
                 </div>
             @endif

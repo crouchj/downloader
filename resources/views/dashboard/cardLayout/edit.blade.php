@@ -15,7 +15,7 @@
 			<h2>
 				DL Card Templates
 				<a class="add-new">
-					<span class="icon-add-new icon" aria-hidden="true" data-icon="&#8862;"></span>
+					<i class="icon-add-new icon" aria-hidden="true" data-icon="&#8862;"></i>
 					<span class="text">Add New</span>
 				</a>
 			</h2>
@@ -50,8 +50,8 @@
 	            </div>
 			</div>
             <div class="save-cancel form-group">
-                {{ Form::button('<span class="icon icon-check" aria-hidden="true"></span>', array('class' => 'save-button submit-button button')) }}
-				{{ Form::button('<span class="icon icon-x" aria-hidden="true"></span>', array('class' => 'cancel-button button')) }}
+                {{ Form::button('<i class="icon icon-check" aria-hidden="true"></i>', array('class' => 'save-button submit-button button')) }}
+				{{ Form::button('<i class="icon icon-x" aria-hidden="true"></i>', array('class' => 'cancel-button button')) }}
             </div>
 	        {{ Form::close() }}
 		</div>

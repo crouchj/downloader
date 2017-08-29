@@ -1,361 +1,324 @@
 .hd {
-	@include box-shadow(0 2px 20px rgba(0,0,0,0.4));
-	background: $header_bg;
-	border-bottom: 8px solid $header_border;
-	height: 96px;
-	position: relative;
-	z-index: 20;
+  @include box-shadow(0 2px 20px rgba(0,0,0,0.4));
+  background: $header_bg;
+  border-bottom: 8px solid $header_border;
+  height: 96px;
+  position: relative;
+  z-index: 20;
 
-	* {
-		color: white;
-	}
+  * {
+    color: white;
+  }
 
-	a {
-		text-decoration: none;
-	}
+  a {
+    text-decoration: none;
+  }
 
-	nav {
-		ul {
-			li {
-				display: inline-block;
-				cursor: pointer;
-				padding: 10px 20px;
-				position: relative;
-			}
-			// secondary submenu
-			&.sub {
-				@include box-shadow(0 10px 20px rgba(0,0,0,0.25));
-				border-left-style: solid;
-				border-left-width: 8px;
-				border-top-style: solid;
-				border-top-width: 8px;
-				display: none;
-				margin: 8px 0 0;
-				position: absolute;
-				top: 80px;
-				left: 0;
-				min-width: 200px;
-				z-index: 1;
+  .icon {
+    font-size: 40px;
+  }
+}
 
-				a {
-					color: $dark_grey;
-					position: absolute;
-					left: 0;
-					top: 0;
-					width: 100%;
-					height: 100%;
-					padding: 15px 0 0 10px;
-				}
+nav {
+  ul {
+    li {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px 20px;
+      position: relative;
+    }
+    // secondary submenu
+    &.sub {
+      @include box-shadow(0 10px 20px rgba(0,0,0,0.25));
+      background: #fff;
+      border-left-style: solid;
+      border-left-width: 8px;
+      border-top-style: solid;
+      border-top-width: 8px;
+      display: none;
+      margin: 8px 0 0;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      min-width: 200px;
+      overflow: hidden;
+      z-index: 1;
 
-				.icon {
-					color: rgba(0,0,0, 0.1);
-					left: 4px;
-					font-size: 14px;
-					position: absolute;
-				}
-				// background icons in sub-list items
-				li > .icon {
-					top: 16px;
-				}
+      a {
+        color: $dark_grey;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px 0 0 10px;
+      }
 
-				li {
-					background-color: $menu_sub_bg_light; // Old browsers
-					@include linear-gradient(top, $menu_sub_bg_light 0%, $menu_sub_bg_dark 100%);
-					display: block;
-					font-size: 18px;
-					line-height: 31px;
-					height: 60px;
-					margin: 0;
-					padding: 25px 20px 14px;
+      .icon {
+        color: $menu_sub_bg_darker;
+        font-size: 50px;
+        left: 1px;
+        top: 4px;
+        position: absolute;
+      }
 
-					&:not(:first-child) {
-						border-top: 1px solid $menu_sub_bg_light;
-					}
-					border-bottom: 1px solid $menu_sub_bg_dark;
+      li {
+        @include linear-gradient(to bottom, $menu_sub_bg_light 0%, $menu_sub_bg_dark 100%);
+        display: block;
+        font-size: 18px;
+        line-height: 31px;
+        height: 60px;
+        margin: 0;
+        padding: 25px 20px 14px;
 
-					&:hover {
-						@include box-shadow(2px 2px 6px rgba(0,0,0,0.25));
-						@include transition(none);
-						background: $secondary;
-						background-color: lighten($secondary, 15%); // Old browsers
-						@include linear-gradient(to bottom, lighten($secondary, 15%) 0%, $secondary 100%);
+        &:not(:first-child) {
+          border-top: 1px solid $menu_sub_bg_light;
+        }
+        border-bottom: 1px solid $menu_sub_bg_dark;
 
-						&:not(:first-child) {
-							border-top: 1px solid lighten($secondary, 15%);
-						}
-						border-bottom: 1px solid $secondary;
+        &:hover {
+          @include box-shadow(2px 2px 6px rgba(0,0,0,0.25));
+          @include transition(none);
+          background: $secondary;
+          background-color: lighten($secondary, 15%); // Old browsers
+          @include linear-gradient(to bottom, lighten($secondary, 15%) 0%, $secondary 100%);
 
-						a {
-							color: white;
-						}
+          &:not(:first-child) {
+            border-top: 1px solid lighten($secondary, 15%);
+          }
+          border-bottom: 1px solid $secondary;
 
-						> .side {
-							li a .icon {
-								color: $dark_grey;
-							}
-						}
-					}
-					// tertiary submenu
-					.side {
-						text-align: right;
-						padding: 0;
-						position: absolute;
-						top: 10px;
-						right: 40px;
-						z-index: 2;
+          .icon {
+            color: $secondary;
+          }
 
-						li {
-							border: none;
-							font-size: 14px;
-							height: 22px;
-							line-height: 11px;
-							margin: 0 0 2px;
-							padding: 0;
+          a {
+            color: white;
+          }
 
-							&:hover {
-								@include box-shadow(none);
-								background: $red;
-							}
+          > .side {
+            li a .icon {
+              color: $dark_grey;
+            }
+          }
+        }
+        // tertiary submenu
+        .side {
+          text-align: right;
+          padding: 0;
+          position: absolute;
+          top: 10px;
+          right: 40px;
+          z-index: 2;
 
-							a {
-								height: 25px;
-								width: 25px;
+          li {
+            border: none;
+            font-size: 14px;
+            height: 22px;
+            line-height: 11px;
+            margin: 0 0 2px;
+            padding: 0;
 
-								.icon {
-									color: lighten($light_grey, 5%);
-								}
+            &:hover {
+              @include box-shadow(none);
+              background: $red;
+            }
 
-								&:hover {
-									&:before {
-										content: attr(title);
-										display: block;
-										position: absolute;
-										left: -93px;
-										bottom: 13px;
-										width: 100px;
-										height: 10px;
-										font-size: 9px;
-										text-transform: uppercase;
-									}
+            a {
+              height: 25px;
+              width: 25px;
 
-									.icon {
-										color: #fff;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+              .icon {
+                color: lighten($light_grey, 5%);
+              }
 
-			&.side {
-				.icon {
-					font-size: 6px;
-					left: 14px;
-				}
-			}
-		}
-	}
+              &:hover {
+                &:before {
+                  content: attr(title);
+                  display: block;
+                  position: absolute;
+                  top: 2px;
+                  left: -93px;
+                  bottom: 13px;
+                  width: 100px;
+                  height: 10px;
+                  font-size: 9px;
+                  text-transform: uppercase;
+                }
 
-	.main-nav {
-		font-size: 26px;
-		position: absolute;
-		top: 0;
-		left: 25px;
+                .icon {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-		li {
-			height: 96px;
-			padding: 18px 20px 15px;
+    &.side {
+      .icon {
+        font-size: 16px;
+        left: 14px;
+        top: 0;
+      }
+    }
+  }
+}
 
-			&.top {
-				&:hover {
-					.sub {
-						display: block;
-					}
+.main-nav {
+  font-size: 26px;
+  position: absolute;
+  top: 0;
+  left: 25px;
 
-					&:before {
-						opacity: 1;
-					}
-				}
+  li {
+    height: 96px;
+    padding: 18px 20px 15px;
 
-				&:before {
-					content: attr(data-title);
-					color: lighten($light_grey, 20%);
-					display: block;
-					opacity: 0.35;
-					position: absolute;
-					bottom: 8px;
-					left: 0;
-					right: 0;
-					text-align: center;
-					width: 100%;
-					font-size: 10px;
-					font-weight: 100;
-					line-height: 30px;
-					text-transform: uppercase;
-					z-index: 11;
-				}
-			}
+    &.top {
+      &:hover {
+        .sub {
+          display: block;
+        }
 
-			&[data-title="Home"] {
-				&:hover {
-					background: $header_red;
+        &:before {
+          opacity: 1;
+        }
+      }
 
-					.sub {
-						border-color: $header_red;
-					}
-				}
-			}
+      &:before {
+        content: attr(data-title);
+        color: lighten($light_grey, 20%);
+        display: block;
+        opacity: 0.35;
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100%;
+        font-size: 10px;
+        font-weight: 100;
+        line-height: 30px;
+        text-transform: uppercase;
+        z-index: 11;
+      }
+    }
 
-			&[data-title="Music"] {
-				&:hover {
-					background: $header_blue;
+    &[data-title="Home"] {
+      .icon {
+        font-size: 40px;
+        top: 10px;
+      }
+      &:hover {
+        background: $header_red;
 
-					.sub {
-						border-color: $header_blue;
-					}
-				}
+        .sub {
+          border-color: $header_red;
+        }
+      }
+    }
 
-				.sub {
-					.artists:before,
-					.releases:before {
-						font-family: "Music";
-						font-size: 55px;
-						color: rgba(0,0,0, 0.1);
-						position: absolute;
-						left: 8px;
-					}
+    &[data-title="Music"] {
+      &:hover {
+        background: $header_blue;
 
-					.releases:before {
-						content: $icon_releases;
-					}
+        .sub {
+          border-color: $header_blue;
+        }
+      }
 
-					.artists:before {
-						content: $icon_artists;
-					}
+      .sub {
+        li:hover:before {
+          background: $header_blue;
+        }
+      }
+    }
 
-					li:hover:before {
-						background: $header_blue;
-					}
-				}
-			}
 
-			&[data-title="Cards"],
-			&[data-title="Statistics"] {
-				padding-bottom: 15px;
-				padding-top: 21px;
+    &[data-title="Cards"] {
+      &:hover {
+        background: $header_purple;
 
-				.icon:first-child {
-					font-size: 12px;
-					position: relative;
-					top: -2px;
-				}
-			}
+        .sub {
+          border-color: $header_purple;
+        }
+      }
 
-			&[data-title="Cards"] {
-				&:hover {
-					background: $header_purple;
+      .sub {
+        li:hover:before {
+          background: $red;
+        }
+      }
+    }
 
-					.sub {
-						border-color: $header_purple;
-					}
-				}
+    &[data-title="Statistics"] {
+      &:hover {
+        background: $header_aqua;
 
-				.sub {
-					li:hover:before {
-						background: $red;
-					}
-				}
-			}
+        .sub {
+          border-color: $header_aqua;
+        }
 
-			&[data-title="Statistics"] {
-				&:before {
-					padding-top: 1px;
-				}
+        &:before {
+          color: $med_grey;
+        }
+      }
+    }
 
-				&:hover {
-					background: $header_aqua;
+    &[data-title="Config"] {
+      &:hover {
+        background: $red;
 
-					.sub {
-						border-color: $header_aqua;
-					}
+        .sub {
+          border-color: $red;
+        }
+      }
+    }
+  }
+}
 
-					&:before {
-						color: $med_grey;
-					}
-				}
-			}
+.user-nav {
+  position: absolute;
+  top: 0;
+  right: 25px;
 
-			&[data-title="Config"] {
-				padding-top: 15px;
-				padding-bottom: 16px;
+  ul li {
+    display: inline-block;
+    height: 96px;
+    padding: 16px 20px 34.5px;
 
-				.icon-config {
-					font-size: 16px;
-				}
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
 
-				&:hover {
-					background: $red;
+    &:before {
+      content: attr(data-title);
+      color: lighten($light_grey, 20%);
+      display: block;
+      opacity: 0.25;
+      position: absolute;
+      bottom: 21px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 10px;
+      font-weight: 100;
+      line-height: 3px;
+      text-transform: uppercase;
+      z-index: 11;
+    }
 
-					.sub {
-						border-color: $red;
-					}
-				}
-			}
-		}
-	}
+    &:first-child:hover {
+      background: $secondary;
+    }
 
-	.user-nav {
-		position: absolute;
-		top: 0;
-		right: 25px;
-
-		ul li {
-			display: inline-block;
-			height: 96px;
-			padding: 16px 20px 34.5px;
-
-			&:hover {
-				&:before {
-					opacity: 1;
-				}
-			}
-
-			&:before {
-				content: attr(data-title);
-				color: lighten($light_grey, 20%);
-				display: block;
-				opacity: 0.25;
-				position: absolute;
-				bottom: 21px;
-				left: 0;
-				right: 0;
-				text-align: center;
-				width: 100%;
-				font-size: 10px;
-				font-weight: 100;
-				line-height: 3px;
-				text-transform: uppercase;
-				z-index: 11;
-			}
-
-			&:first-child:hover {
-				background: $secondary;
-			}
-
-			&:nth-child(2):hover {
-				background: $header_red;
-			}
-
-			.icon {
-				line-height: 1;
-			}
-		}
-	}
-
-	.icon {
-		font-size: 14px;
-		position: relative;
-		top: 2px;
-	}
+    &:nth-child(2):hover {
+      background: $header_red;
+    }
+  }
 }

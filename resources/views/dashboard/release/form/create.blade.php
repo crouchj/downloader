@@ -3,7 +3,7 @@
         <h2>
     		New <span class="type">Release</span>
     		<a class="list" href="{{ route('release.index') }}">
-    			<span class="icon icon-list-circle" aria-hidden="true"></span>
+    			<i class="icon icon-list-circle" aria-hidden="true"></i>
     			<span class="text">List Releases</span>
     		</a>
     	</h2>

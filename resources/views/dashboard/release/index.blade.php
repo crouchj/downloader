@@ -7,7 +7,7 @@
 			<h2>
 				<span>Releases</span>
 				<a class="add-new modal">
-					<span class="icon-add-circle icon" aria-hidden="true"></span>
+					<i class="icon-plus-circle icon" aria-hidden="true"></i>
 					<span class="text">Add New</span>
 				</a>
 			</h2>
@@ -24,7 +24,7 @@
     						<span class="title">{{ $release->title }}</span>
     						{{ Form::open(['route' => ['release.destroy', $release->id], 'method' => 'delete', 'class' => 'release-delete delete crud']) }}
     							{{ Form::hidden('id', $release->id) }}
-    			                {{ Form::button('<span class="icon icon-trash" aria-hidden="true"></span><span class="txt">Delete</span>', ['class' => 'delete-button button']) }}
+    			                {{ Form::button('<i class="icon icon-trash" aria-hidden="true"></i><span class="txt">Delete</span>', ['class' => 'delete-button button']) }}
     						{{ Form::close() }}
     					</header>
     					<section class="accordion-content" data-release-id="{{ $release->id }}">
@@ -49,8 +49,8 @@
             				            </div>
             						</div>
             			            <div class="save-cancel form-group">
-            			                {{ Form::button('<span class="icon icon-check" aria-hidden="true"></span>', ['class' => 'save-button submit-button button']) }}
-            							{{ Form::button('<span class="icon icon-x" aria-hidden="true"></span>', ['class' => 'cancel-button button']) }}
+            			                {{ Form::button('<i class="icon icon-check" aria-hidden="true"></i>', ['class' => 'save-button submit-button button']) }}
+            							{{ Form::button('<i class="icon icon-x" aria-hidden="true"></i>', ['class' => 'cancel-button button']) }}
             			            </div>
         				        {{ Form::close() }}
     						</div>

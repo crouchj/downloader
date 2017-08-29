@@ -3,7 +3,7 @@
     	<h2>
     		New <span class="type">Artist</span>
     		<a class="list" href="{{ route('artist.index') }}">
-    			<span class="icon-list-circle icon" aria-hidden="true"></span>
+    			<i class="icon-list-circle icon" aria-hidden="true"></i>
     			<span class="text">List Artists</span>
     		</a>
     	</h2>

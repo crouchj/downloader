@@ -15,7 +15,7 @@
 			<h2>
 				DL Card Templates
 				<a href="{{ route('cardLayout.create') }}" class="add-new">
-					<span class="icon-add-new icon" aria-hidden="true" data-icon="&#8862;"></span>
+					<i class="icon-add-new icon" aria-hidden="true" data-icon="&#8862;"></i>
 					<span class="text">Add New</span>
 				</a>
 			</h2>

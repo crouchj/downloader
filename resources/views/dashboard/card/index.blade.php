@@ -3,7 +3,7 @@
 @section('content')
 <main class="dashboard-cards">
 
-	<nav><a href="{{ route('card.create') }}" class="add-new"><span class="icon-downloads icon" aria-hidden="true" data-icon="&#8862;"></span>Add New</a></nav>
+	<nav><a href="{{ route('card.create') }}" class="add-new"><i class="icon-downloads icon" aria-hidden="true" data-icon="&#8862;"></i>Add New</a></nav>
 
 	<section class="cards module">
 		<h2>Cards</h2>
