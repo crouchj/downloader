@@ -111,7 +111,6 @@ a {
 	.button,
 	button,
 	input[type=submit] {
-		font-size: 6px;
 		border-radius: 4px;
 		background-color: $button_color;
 		color: $white;
@@ -123,4 +122,8 @@ a {
 			background-color: darken($button_color, 5%);
 		}
 	}
+}
+
+.icon {
+	font-style: normal;
 }

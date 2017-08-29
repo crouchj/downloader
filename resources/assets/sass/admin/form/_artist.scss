@@ -1,0 +1,9 @@
+form#artist-store {
+	.multiselect-container .search-field input[value="Releases"] {
+		color: $light_grey;
+
+		&:focus {
+			border-color: $primary;
+		}
+	}
+}

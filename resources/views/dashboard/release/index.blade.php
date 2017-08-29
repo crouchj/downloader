@@ -7,7 +7,7 @@
 			<h2>
 				<span>Releases</span>
 				<a class="add-new modal">
-					<i class="icon-plus-circle icon" aria-hidden="true"></i>
+					<i class="icon-plus-circle-inverse icon" aria-hidden="true"></i>
 					<span class="text">Add New</span>
 				</a>
 			</h2>
@@ -24,7 +24,7 @@
     						<span class="title">{{ $release->title }}</span>
     						{{ Form::open(['route' => ['release.destroy', $release->id], 'method' => 'delete', 'class' => 'release-delete delete crud']) }}
     							{{ Form::hidden('id', $release->id) }}
-    			                {{ Form::button('<i class="icon icon-trash" aria-hidden="true"></i><span class="txt">Delete</span>', ['class' => 'delete-button button']) }}
+    			                {{ Form::button('<i class="icon icon-trash" aria-hidden="true"></i>', ['class' => 'delete-button button']) }}
     						{{ Form::close() }}
     					</header>
     					<section class="accordion-content" data-release-id="{{ $release->id }}">
@@ -63,9 +63,4 @@
 	</section>
 
 </main>
-
-<div class="overlay"></div>
-<div id="tmpl-create-new">
-	@include('dashboard.release.form.create')
-</div>
 @endsection

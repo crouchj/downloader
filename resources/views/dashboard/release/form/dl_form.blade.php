@@ -10,7 +10,7 @@
         </div>
         <div class="form-group zipfile">
             {{ Form::file('zipfile') }}
-            <i class="icon-archive"></i>
+            <i class="icon-archive icon"></i>
             <span class="filename"></span>
         </div>
     </div>

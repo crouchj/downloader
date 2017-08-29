@@ -17,3 +17,4 @@ yarn-error.log
 /public/mix-manifest.json
 /resources/assets/fonts
 /resources/assets/sass/_icons.scss
+.fontcustom-manifest.json
