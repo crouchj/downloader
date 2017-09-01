@@ -22,8 +22,9 @@
 nav {
   ul {
     li {
-      display: inline-block;
       cursor: pointer;
+      display: block;
+      float: left;
       padding: 10px 20px;
       position: relative;
     }
@@ -64,7 +65,7 @@ nav {
 
       li {
         @include linear-gradient(to bottom, $menu_sub_bg_light 0%, $menu_sub_bg_dark 100%);
-        display: block;
+        float: none;
         font-size: 18px;
         line-height: 31px;
         height: 60px;
