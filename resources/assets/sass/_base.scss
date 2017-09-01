@@ -1,5 +1,6 @@
 @import "_normalize";
 @import "_mixins";
+@import "_fonts";
 
 body,
 html {
@@ -11,7 +12,6 @@ html {
 body {
   min-height: 100%;
 }
-@import "_fonts";
-@import "_icons";
+
 @import "_colors";
 @import "_layout";
