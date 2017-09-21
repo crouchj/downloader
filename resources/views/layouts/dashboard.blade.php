@@ -1,3 +1,5 @@
 @extends('layouts.admin')
 
-@include('dashboard.shared.header')
+@section('header')
+    @include('dashboard.shared.header')
+@endsection

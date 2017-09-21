@@ -14,9 +14,14 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body class="admin">
-    @yield('content')
+    <div id="app">
+        @yield('header')
+        @yield('content')
+    </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('/js/manifest.js') }}"></script>
+    <script src="{{ asset('/js/vendor.js') }}"></script>
+    <script src="{{ asset('/js/admin.js') }}"></script>
 </body>
 </html>

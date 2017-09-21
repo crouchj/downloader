@@ -181,6 +181,8 @@ return [
 
         Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
 
+        Laravel\Passport\PassportServiceProvider::class,
+
     ],
 
     /*

@@ -10,10 +10,14 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-preset-es2015": "^6.24.1",
     "chosen-js": "^1.7.0",
-    "extract-text-webpack-plugin": "^3.0.0",
     "jquery": "^3.1.1",
     "laravel-mix": "^1.0",
+    "lodash": "^4.17.4",
+    "vue": "^2.4.2",
+    "vuetiful": "github:andrewcourtice/vuetiful",
     "webfonts-loader": "^2.0.3"
   }
 }

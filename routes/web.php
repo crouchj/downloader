@@ -23,13 +23,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     ));
 
     // Resource Controller for user management
-    Route::resource('download', 'DownloadController');
-    Route::resource('artist', 'ArtistController');
-    Route::resource('release', 'ReleaseController');
-    Route::resource('card', 'CardController');
-    Route::resource('cardLayout', 'CardLayoutController');
-    Route::resource('config', 'ConfigController');
-    Route::resource('user', 'UserController');
+    Route::resource('download', 'DownloadController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('artist', 'ArtistController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('release', 'ReleaseController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('card', 'CardController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('cardLayout', 'CardLayoutController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('config', 'ConfigController', ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('user', 'UserController', ['except' => ['store', 'update', 'destroy']]);
 });
 
 Auth::routes();
