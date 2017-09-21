@@ -11,7 +11,7 @@
     <div class="module-content group">
         <div class="crud-container">
                 {{ Form::open(['route' => 'artist.store', 'id' => 'artist-store', 'class' => 'artist-create create crud']) }}
-                    @include('dashboard.artist.form.artist_form')
+                    @include('dashboard.artist.form.form')
                 {{ Form::close() }}
         </div>
     </div>

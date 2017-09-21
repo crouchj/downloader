@@ -6,7 +6,7 @@
         <div class="module-header">
             <h2>
                 <span>Artists</span>
-                <a class="add-new modal">
+                <a href="{{ route('artist.create') }}" class="add-new modal">
                     <i class="icon-plus-circle-inverse icon" aria-hidden="true"></i>
                     <span class="text">Add New</span>
                 </a>

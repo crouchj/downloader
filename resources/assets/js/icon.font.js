@@ -1,5 +1,3 @@
-let webfontsGenerator = require('webfonts-generator');
-
 module.exports = {
   'files': [
     '../icons/*.svg'

@@ -6,7 +6,7 @@
 		<div class="module-header">
 			<h2>
 				<span>Releases</span>
-				<a class="add-new modal">
+				<a href="{{ route('release.create') }}" class="add-new">
 					<i class="icon-plus-circle-inverse icon" aria-hidden="true"></i>
 					<span class="text">Add New</span>
 				</a>
@@ -17,9 +17,9 @@
     		@if ($releases->isEmpty())
     			<h2 class="no-results">No Releases. <a href="{{ route('release.create') }}">Add one!</a></h2>
     		@else
-    			<article class="releases accordion">
+    			<article class="releases">
         			@foreach ($releases as $index => $release)
-    					<header data-header-id="{{ $index }}" data-release-id="{{ $release->id }}">
+                        <header data-header-id="{{ $index }}" data-release-id="{{ $release->id }}">
     						<span class="artist">{{ $release->artist->name }}</span>
     						<span class="title">{{ $release->title }}</span>
     						{{ Form::open(['route' => ['release.destroy', $release->id], 'method' => 'delete', 'class' => 'release-delete delete crud']) }}
@@ -27,7 +27,7 @@
     			                {{ Form::button('<i class="icon icon-trash" aria-hidden="true"></i>', ['class' => 'delete-button button']) }}
     						{{ Form::close() }}
     					</header>
-    					<section class="accordion-content" data-release-id="{{ $release->id }}">
+    					<section class="-content" data-release-id="{{ $release->id }}">
     						<div class="crud-container col" data-id="{{ $index }}">
         				        {{ Form::open(['route' => ['release.update', $release->id], 'method' => 'put', 'id' => 'release-update', 'class' => 'release-update update crud']) }}
             						<div class="fields">

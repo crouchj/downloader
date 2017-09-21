@@ -2,7 +2,7 @@
 <div class="fields group">
     <div class="col-left">
         <div class="form-group album-cover">
-            {{ Form::file('album_cover') }}
+            {{ Form::file('album_cover', ['class' => 'image-upload']) }}
     		<div class="image-preview">
     		    <div class="overlay"></div>
     		</div>

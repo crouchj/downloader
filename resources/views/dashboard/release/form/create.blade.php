@@ -11,7 +11,7 @@
 	<div class="module-content group">
 		<div class="crud-container">
 		        {{ Form::open(array('route' => 'release.store', 'id' => 'release-store', 'class' => 'release-create create crud')) }}
-					@include('dashboard.release.form.dl_form')
+					@include('dashboard.release.form.form')
 		        {{ Form::close() }}
 		</div>
 	</div>

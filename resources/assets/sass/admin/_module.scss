@@ -1,10 +1,26 @@
 .module {
+  @include box-shadow(0 0 40px rgba(100,100,100,0.25))
   border-radius: 0;
-  background: #fff;
+  background: $white;
   border: none;
+  color: $primary;
+  margin: 0 auto 20px;
   max-width: 1024px;
   padding: 20px;
   position: relative;
+
+  div,
+	p {
+		margin: 0 0 10px;
+	}
+
+	h1 {
+		margin: 0 0 20px;
+	}
+
+	.intro {
+		margin: 0 0 20px;
+	}
 
   input.ui-autocomplete-input,
   input[type=email],
@@ -12,9 +28,14 @@
   input[type=text],
   label,
   select {
+    display: inline-block;
+		font-family: 'Inconsolata', courier;
     font-size: 18px;
     color: $header_bg;
     height: 40px;
+    padding: 5px;
+		text-align: center;
+		width: 100%;
   }
 
   label {
@@ -80,6 +101,21 @@
     }
   }
 
+  .button,
+	button,
+	input[type=submit] {
+		border-radius: 4px;
+		background-color: $button_color;
+		color: $white;
+		cursor: pointer;
+		display: inline-block;
+		height: 50px;
+
+		&:hover {
+			background-color: darken($button_color, 5%);
+		}
+	}
+
   .save-cancel {
     clear: both;
     text-align: right;
@@ -104,7 +140,6 @@
   .cancel-button {
     background: darken($red, 10%);
     border-color: white;
-    // padding: 8px 11px;
 
     &:hover {
       background: $red;
